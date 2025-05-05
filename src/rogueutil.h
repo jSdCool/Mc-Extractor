@@ -296,7 +296,10 @@ int
 getkey(void)
 {
 #ifndef _WIN32
-	int cnt = kbhit(); /* for ANSI escapes processing */
+	int cnt = 0; /* for ANSI escapes processing */
+	while(cnt == 0){//sometimes when an input happens this returns 0, so just check again until it does not
+		cnt = kbhit();// - jSdCool
+	}
 #endif
 	int k = getch();
 	switch(k) {

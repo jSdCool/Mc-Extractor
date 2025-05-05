@@ -133,9 +133,9 @@ void renderMainText(int width,int height, int selected, vector<string> &options)
 void renderSearch(int width,int height, string searchText,int cursorPos, bool hilighColor){
 	gotoxy(1,height-1);
 	if(hilighColor){
-		setBackgroundColor(LIGHTBLUE);
+		setBackgroundColor(GREEN);
 	}else{
-		setBackgroundColor(DARKGREY);
+		setBackgroundColor(CYAN);
 	}
 	setColor(BLACK);
 	if((int)searchText.size() < width){
@@ -202,6 +202,7 @@ void extract(string &fileName,json indeices, string &assetsFolder){
 
 void handleCtrlC(){
 	resetColor();
+	showcursor();
 	gotoxy(0,trows());
 	cout << "STOP"<< endl;
 }
@@ -258,7 +259,7 @@ int main() {
 
 	cout.flush();
 	//prepair the initial graphics
-	setBackgroundColor(LIGHTGREEN);
+	setBackgroundColor(GREEN);
 	setColor(BLACK);
 	gotoxy(1,1);
 	cout << "MC EXTRACTOR";
