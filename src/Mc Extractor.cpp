@@ -263,7 +263,9 @@ int main() {
 	setColor(BLACK);
 	gotoxy(1,1);
 	cout << "MC EXTRACTOR";
-	for(int i=0;i<terminalWidth-(int)(string("MC Extractor").size());i++){
+	setColor(WHITE);
+	cout << " ESC: Quit | ENTER: Extract | UP/DOWN: Select | TYPING: Search";
+	for(int i=0;i<terminalWidth-(int)(string("MC Extractor ESC: Quit | ENTER: Extract | UP/DOWN: Select | TYPING: Search").size());i++){
 		cout << ' ';
 	}
 	resetColor();
