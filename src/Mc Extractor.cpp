@@ -299,7 +299,7 @@ int main() {
 			if(visableoptions.size()>0){
 				extract(visableoptions[scrollValue],indexedObjects,mcAssetsFolder);
 			}
-		} else if(input == 8){//backspace
+		} else if(input == 8 || input == 127){//backspace (8 on windows 127 on linux)
 			if(searchString.size()>0){
 				searchString = searchString.substr(0, searchString.size()-1);
 				filterResults(searchString,visableoptions,indexedFileKeys);
