@@ -306,7 +306,7 @@ int main() {
 				searchString = searchString.substr(0, searchString.size()-1);
 				filterResults(searchString,visableoptions,indexedFileKeys);
 				if(scrollValue >= (int)visableoptions.size()){
-					scrollValue = std::max((int)visableoptions.size()-1,0);
+					scrollValue = max((int)visableoptions.size()-1,0);
 				}
 			}else{
 				continue;
@@ -315,7 +315,7 @@ int main() {
 			searchString+=input;
 			filterResults(searchString,visableoptions,indexedFileKeys);
 			if(scrollValue >= (int)visableoptions.size()){
-				scrollValue = std::max((int)visableoptions.size()-1,0);
+				scrollValue = max((int)visableoptions.size()-1,0);
 			}
 		}else{
 			continue;

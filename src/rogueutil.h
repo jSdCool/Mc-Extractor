@@ -875,12 +875,17 @@ char*
 getUsername(void)
 {
 #ifdef _WIN32
+	#ifdef _MSC_VER
+		static char out[] = {'g','e','t','U','s','e','r','n','a','m','e',' ','n','o','t',' ','s','u','p','p','o','r','t','e','d',' ','b','y',' ','M','S','C','V',' ','c','o','m','p','i','l','e','r'};
+		return out;
+	#else
         /* TODO: Find a better way that doesn't use a static var. */
         static char ret[UNLEN + 1];
         DWORD len = UNLEN + 1;
         if (GetUserNameA(ret, &len))
                 return ret;
         return NULL;
+	#endif
 #else /* _WIN32 */
 	struct passwd *pw = getpwuid(getuid());
 	if (pw) {
