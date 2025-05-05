@@ -229,8 +229,8 @@ int main() {
 	int terminalWidth = tcols();
 	int terminalHeight = trows();
 
-	if(terminalWidth < 80 || terminalHeight < 40){
-		cerr << "Terminal Window too small. must be at leased 80X40" << endl;
+	if(terminalWidth < 80 || terminalHeight < 25){
+		cerr << "Terminal Window too small. must be at leased 80X25" << endl;
 		return EXIT_FAILURE;
 	}
 
