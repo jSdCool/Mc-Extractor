@@ -49,7 +49,7 @@ string getMinecraftFolder(){
 	return getEnvVar("appdata") + "/.minecraft/";
 #else
 	//no idea if this will work for macOS
-	return getEnvVar("home") + "/.minecraft/";
+	return getEnvVar("HOME") + "/.minecraft/";
 #endif
 }
 
